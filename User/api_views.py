@@ -116,6 +116,5 @@ class TokenView(View):
 
         登录获取token
         """
-        print(1111)
         user = User.authenticate(**request.d.dict())
         return Auth.get_login_token(user)
