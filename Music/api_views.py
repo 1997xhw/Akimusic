@@ -11,7 +11,7 @@ class MusicView(View):
     @staticmethod
     @Analyse.r(b=[
         PList(name='targetsrcs', read_name='音乐平台').set_child(
-            P('targetsrc', '音乐平台').validate(lambda x: is_platform(x))
+            P('targetsrc', '音乐平台').validate(is_platform)
             # P('targetsrc', '音乐平台').validate(lambda x: x in ['baiduFlac', 'kugou', 'kuwo', 'qq', 'netease', 'migu', 'xiami', 'joox'])
         ),
         # P('targetsrcs', '音乐平台').process(list),
