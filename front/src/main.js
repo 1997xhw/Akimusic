@@ -15,7 +15,7 @@ Vue.config.productionTip = false;
 Vue.use(VueAxios, axios);
 axios.defaults.baseURL = "/api";
 new Vue({
-  render: h => h(App),
+  render: h => h(),
   router,
   store
 }).$mount("#app");
