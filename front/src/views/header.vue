@@ -13,24 +13,4 @@ export default {
 };
 </script>
 
-<style scoped>
-.el-button {
-  background: #5b24b2;
-  /*border-radius: 20px;*/
-  color: white;
-  border: 0;
-  /*box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.52);*/
-}
-.el-button:focus {
-  color: white;
-  background-color: #5b24b2;
-  border-color: #5b24b2;
-  /*box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.3);*/
-}
-.el-button:hover {
-  color: white;
-  background-color: #5b24b2;
-  border-color: #5b24b2;
-  box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.3);
-}
-</style>
+<style scoped></style>

@@ -1,0 +1,251 @@
+.container-box {
+  background-color: #f2f6fc;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  .loading{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: #77787a75;
+    z-index:999;
+    //filter: alpha(opacity=60);
+    //opacity: 0.6 !important;
+  }
+
+}
+
+.header-box {
+  height: 50px;
+  margin: 20px auto;
+  width: 95%;
+}
+
+.header-title {
+  float: left;
+}
+
+.header-login {
+  float: right;
+
+  .el-button {
+    background: #5b24b2;
+    color: white;
+    border: 0;
+    //box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.1);
+  }
+
+  .el-button:focus {
+    color: white;
+    background-color: #5b24b2;
+    border-color: #5b24b2;
+  }
+
+  .el-button:hover {
+    color: white;
+    background-color: #5b24b2;
+    border-color: #5b24b2;
+    //box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px 4px rgba(90, 36, 178, 0.4);
+  }
+}
+
+.musiclist{
+
+}
+
+.musicbox {
+  width: 600px;
+  position: absolute;
+  height: 50px;
+  top: calc(50vh - 50px / 2);
+  left: calc(50vw - 600px / 2);
+
+  .musicinput {
+    //float: left;
+    .el-input__inner {
+      height: 50px;
+      left: 5px;
+      border-radius: 50px;
+      border: none;
+      box-shadow: 0 4px 10px 1px rgba(0, 0, 0, 0.2);
+    }
+
+    .el-input__prefix {
+      color: #303133;
+      left: 4px;
+      position: absolute;
+    }
+
+    .el-icon-search {
+      font-weight: bold;
+      position: absolute;
+      top: 2px;
+    }
+
+  }
+
+  .el-button {
+    position: absolute;
+    border: none;
+    background: #5a24b2;
+    height: 40px;
+    border-radius: 40px;
+    top: 5px;
+    width: 15%;
+    left: calc(100% - 15% - 5px);
+    color: #FFFFFF;
+    //box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2);
+  }
+
+  .el-button:hover, .el-button:focus {
+    color: #f2f6fc;
+    border: none;
+    //border-color: #b3d9d9;
+    background-color: #5a24b2;
+    //box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.musicappselect {
+  margin-top: 20px;
+  font-weight: bold;
+
+  .el-checkbox-button__inner:hover {
+    color: #feba07;
+    //border-color: #DCDFE6;
+    //border: 1px solid #DCDFE6;
+  }
+
+  .el-checkbox-button.is-focus .el-checkbox-button__inner {
+    border-color: #f2f6fc;
+  }
+
+  .el-checkbox-button:first-child, .el-checkbox-button:last-child {
+    .el-checkbox-button__inner {
+      border: 0px solid #f2f6fc;
+      border-radius: 50px;
+      //box-shadow: 0 2px 7px 1px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .el-checkbox-button__inner {
+    border: 0px solid #f2f6fc;
+    border-radius: 50px;
+    font-weight: bold;
+    //box-shadow: 0 2px 7px 1px rgba(0, 0, 0, 0.1);
+  }
+
+  .el-checkbox-button {
+    margin: 5px;
+  }
+
+}
+.timeLoading{
+  position: absolute;
+  top: calc(50% - 48px);
+  left: calc(50% - 48px);
+  .text{
+    font-weight: bold;
+    font-size: 30px;
+    color: #f56c6c;
+    margin-top: 50px;
+  }
+  @-moz-keyframes timer-loader {
+    0% {
+      -moz-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -moz-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  @-webkit-keyframes timer-loader {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes timer-loader {
+    0% {
+      -moz-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -moz-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  /* :not(:required) hides this rule from IE9 and below */
+  .timer-loader:not(:required) {
+    border: 10px solid #ffffff;
+    -moz-border-radius: 48px;
+    -webkit-border-radius: 48px;
+    border-radius: 48px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    text-indent: -9999px;
+    width: 96px;
+    height: 96px;
+  }
+  .timer-loader:not(:required)::before {
+    -moz-animation: timer-loader 1250ms infinite linear;
+    -webkit-animation: timer-loader 1250ms infinite linear;
+    animation: timer-loader 1250ms infinite linear;
+    -moz-transform-origin: 6px 6px;
+    -ms-transform-origin: 6px 6px;
+    -webkit-transform-origin: 6px 6px;
+    transform-origin: 6px 6px;
+    background: #f56c6c;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    content: '';
+    display: block;
+    position: absolute;
+    width: 12px;
+    height: 38.4px;
+    left: 35px;
+    top: 35px;
+  }
+  .timer-loader:not(:required)::after {
+    -moz-animation: timer-loader 15000ms infinite linear;
+    -webkit-animation: timer-loader 15000ms infinite linear;
+    animation: timer-loader 15000ms infinite linear;
+    -moz-transform-origin: 6px 6px;
+    -ms-transform-origin: 6px 6px;
+    -webkit-transform-origin: 6px 6px;
+    transform-origin: 6px 6px;
+    background: #f56c6c;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    content: '';
+    display: block;
+    position: absolute;
+    width: 12px;
+    height: 32px;
+    left: 35px;
+    top: 35px;
+  }
+
+}
+
+
+
+
