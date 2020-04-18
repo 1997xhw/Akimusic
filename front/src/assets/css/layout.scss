@@ -5,12 +5,20 @@
   width: 100%;
   top: 0;
   left: 0;
-  .loading{
+  .el-container{
+    text-align: center;
+    .footer{
+      font-weight: bold;
+      //background-color: #606266;
+
+    }
+  }
+  .loading {
     position: absolute;
     height: 100%;
     width: 100%;
     background: #77787a75;
-    z-index:999;
+    z-index: 999;
     //filter: alpha(opacity=60);
     //opacity: 0.6 !important;
   }
@@ -52,16 +60,66 @@
   }
 }
 
-.musiclist{
-
-}
-
-.musicbox {
-  width: 600px;
+.musiclist {
   position: absolute;
-  height: 50px;
+  margin: 0 auto;
+  left: calc(50vw - 65% /2);
+  top: calc(50vh - 20px);
+  width: 100%;
+  .el-container{
+    height: 500px;
+    .el-main{
+      padding: 0;
+    }
+  }
+  .musicgrid {
+    margin-top: 10px;
+    .logo{
+      float: left;
+      //display: ;
+      position: relative;
+      margin: 15px;
+      width: 4%;
+    }
+    .singer{
+      float: left;
+
+      font-weight: bold;
+      text-align: left;
+      width: 200px;
+      //display: inline-block;
+      //margin: 10px;
+      margin: 15px;
+      color: #606266;
+    }
+
+    .el-card {
+      width: 65%;
+
+      //height: 50px;
+      border-radius: 20px;
+      border-color: #f2f6fc;
+
+    }
+    .el-card__body {
+      padding: 0;
+      text-align: center;
+    }
+
+  }
+}
+.musicboxp{
+  position: absolute;
+  //height: 50px;
   top: calc(50vh - 50px / 2);
   left: calc(50vw - 600px / 2);
+}
+.musicbox {
+  width: 700px;
+  position: absolute;
+  //height: 50px;
+  top: calc(50vh - 300px / 2);
+  left: calc(50vw - 700px / 2);
 
   .musicinput {
     //float: left;
@@ -143,16 +201,19 @@
   }
 
 }
-.timeLoading{
+
+.timeLoading {
   position: absolute;
   top: calc(50% - 48px);
   left: calc(50% - 48px);
-  .text{
+
+  .text {
     font-weight: bold;
     font-size: 30px;
     color: #f56c6c;
     margin-top: 50px;
   }
+
   @-moz-keyframes timer-loader {
     0% {
       -moz-transform: rotate(0deg);
@@ -203,6 +264,7 @@
     width: 96px;
     height: 96px;
   }
+
   .timer-loader:not(:required)::before {
     -moz-animation: timer-loader 1250ms infinite linear;
     -webkit-animation: timer-loader 1250ms infinite linear;
@@ -223,6 +285,7 @@
     left: 35px;
     top: 35px;
   }
+
   .timer-loader:not(:required)::after {
     -moz-animation: timer-loader 15000ms infinite linear;
     -webkit-animation: timer-loader 15000ms infinite linear;

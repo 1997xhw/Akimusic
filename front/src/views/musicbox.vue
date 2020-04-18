@@ -1,5 +1,5 @@
 <template>
-  <div >
+  <div>
     <div class="musicinput">
       <el-input
         placeholder="请输入内容"
@@ -28,7 +28,6 @@
   </div>
 </template>
 <script>
-
 export default {
   name: "musicbox",
   data() {
@@ -39,12 +38,12 @@ export default {
       targetsrcs: []
     };
   },
-  components: {  },
+  components: {},
   methods: {
     goSearch() {
       var vm = this;
-      console.log(this.musicname);
-      console.log(this.targetsrcs);
+      // console.log(this.musicname);
+      // console.log(this.targetsrcs);
       if (this.musicname !== "" && this.targetsrcs.length > 0) {
         var param = {
           musicname: this.musicname,
@@ -54,9 +53,10 @@ export default {
         this.axios
           .post("music/", param)
           .then(response => {
-            if(response.data.msg==="OK"){
-              console.log(response);
+            if (response.data.msg === "OK") {
+              // console.log(response);
               vm.$emit("load", false);
+              vm.$emit("pulldata", response.data.body.items);
             }
           })
           .catch(response => {

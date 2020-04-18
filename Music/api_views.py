@@ -30,7 +30,7 @@ class MusicView(View):
         for key, values in search_results.items():
             for value in values:
                 print("singer: "+value["singers"] + "download_url" + value["download_url"])
-                items.append([str(idx), value["singers"], value["download_url"], value['source']])
+                items.append(value)
                 idx += 1
         # print(search_results)
         return dict(items=items)

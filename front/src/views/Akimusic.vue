@@ -6,10 +6,10 @@
         <headerr></headerr>
       </el-header>
       <el-main>
-        <musicbox class="musicbox" @load="load"></musicbox>
-        <musiclist></musiclist>
+        <musicbox class="musicbox" @load="load" @pulldata="pulldata"></musicbox>
+        <musiclist class="musiclist" :musicList="musicList"></musiclist>
       </el-main>
-      <el-footer>Footer</el-footer>
+      <el-footer height="40px" class="footer"></el-footer>
     </el-container>
   </div>
 </template>
@@ -29,25 +29,30 @@ export default {
   },
   data() {
     return {
-      loading: false
+      loading: false,
+      musicList: []
     };
   },
   methods: {
-    load(loading){
+    load(loading) {
       this.loading = loading;
+    },
+    pulldata(data) {
+      this.musicList = data;
+      // console.log(data);
     }
-  },
+  }
 };
 </script>
 
 <style type="text/css">
-#app,
-html,
-body,
-.el-container {
-  padding: 0px;
-  margin: 0px;
-  height: 100%;
-  text-align: center;
-}
+/*#app,*/
+/*html,*/
+/*body,*/
+/*.el-container {*/
+/*  padding: 0px;*/
+/*  margin: 0px;*/
+/*  height: 100%;*/
+/*  text-align: center;*/
+/*}*/
 </style>
