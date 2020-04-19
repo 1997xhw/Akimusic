@@ -46,8 +46,19 @@
         {{ formatTime(music.currentTime) }}/{{ formatTime(music.maxTime) }}
       </el-col>
     </el-row>
-    <audio ref="music" loop autoplay>
-      <source :src="musicData.download_url" type="audio/mpeg" />
+    <!--      controls-->
+    <!--      controlslist="download"-->
+      <a :href="this.url" v-show="!controls.noDownload" target="_blank" class="download" download>下载</a>
+    <audio
+      ref="music"
+      loop
+      autoplay
+      :src="this.url"
+
+      @pause="onPause"
+      @play="onPlay"
+    >
+      <source type="audio/mpeg" />
     </audio>
   </div>
 </template>
@@ -55,6 +66,8 @@
 export default {
   data() {
     return {
+      url: "",
+      controls: "",
       music: {
         isPlay: false,
         currentTime: 0,
@@ -72,19 +85,31 @@ export default {
   watch: {
     musicData: {
       handler() {
-        this.$refs.music.isPlay = false;
-        this.$refs.music.currentTime = 0;
-        this.$refs.music.maxTime = 0;
-        this.$refs.music.volume = 0;
-        console.log(this.music);
-        this.listenMusic();
+        this.url = this.musicData.download_url;
+        console.log(this.url);
       },
       deep: true,
       immediate: true
     }
   },
   methods: {
+    goplay() {
+      this.$refs.audio.play();
+    },
+    // 暂停音频
+    gopause() {
+      this.$refs.audio.pause();
+    },
+    onPlay() {
+      this.audio.playing = true;
+    },
+    // 当音频暂停
+    onPause() {
+      this.audio.playing = false;
+    },
+
     listenMusic() {
+      // console.log(this.$refs.music);
       if (!this.$refs.music) {
         return;
       }

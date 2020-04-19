@@ -8,7 +8,7 @@
       >
         <!--        <el-button round slot="append" icon="el-icon-search"></el-button>-->
       </el-input>
-      <el-button round @click="goSearch"><b>Search</b></el-button>
+      <el-button round @click="goSearch"><span><b>GO</b></span></el-button>
     </div>
     <div class="musicappselect">
       <el-checkbox-group

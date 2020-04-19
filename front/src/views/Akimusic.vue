@@ -13,9 +13,9 @@
           :musicList="musicList"
         ></musiclist>
       </el-main>
-      <el-footer height="40px" class="footer"
-        ><music :musicData="musicData"></music
-      ></el-footer>
+<!--      <el-footer height="20px" class="footer">-->
+        <!--        <music :musicData="musicData"></music>-->
+<!--      </el-footer>-->
     </el-container>
   </div>
 </template>
@@ -25,11 +25,11 @@ import headerr from "./header.vue";
 import musicbox from "./musicbox.vue";
 import timeLoading from "./timeLoading";
 import musiclist from "./musiclist";
-import music from "./music";
+// import music from "./music";
 export default {
   name: "Akimusic",
   components: {
-    music,
+    // music,
     headerr,
     musicbox,
     timeLoading,
@@ -67,4 +67,11 @@ export default {
 /*  height: 100%;*/
 /*  text-align: center;*/
 /*}*/
+.html,
+.body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
 </style>

@@ -7,7 +7,7 @@ import VueAxios from "vue-axios";
 import "./assets/css/layout.scss";
 import "./plugins/element.js";
 import router from "./router";
-
+// import 'lib-flexible/flexible'
 axios.interceptors.request.use(function(config) {
   config.headers.token = window.sessionStorage.getItem("token");
   return config;

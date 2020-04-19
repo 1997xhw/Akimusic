@@ -1,8 +1,8 @@
 <template>
   <div>
-    <el-container>
+    <el-container direction="vertical">
       <el-scrollbar>
-        <el-main height="200px">
+        <el-main>
           <!--        <el-scrollbar style="overflow:auto">-->
           <el-row v-if="this.musicList.length > 0">
             <el-col :span="24" v-for="(music, index) of musicList" :key="index">
@@ -24,11 +24,7 @@
                   <span class="ext">{{ music.ext }}</span>
                   <span class="filesize">{{ music.filesize }}</span>
                   <div class="tool" v-show="toolVisible && toolIndex === index">
-                    <a
-                      :href="music.download_url"
-                      download="adasd.mp3"
-                      target="_blank"
-                    >
+                    <a :href="music.download_url" target="_blank" download>
                       <el-button type="text" class="download"
                         ><img
                           src="../assets/toolLogo/下载2.png"
@@ -48,15 +44,16 @@
               </div>
             </el-col>
           </el-row>
-          <!--        </el-scrollbar>-->
         </el-main>
       </el-scrollbar>
+      <el-footer><music-player :theUrl="theUrl"></music-player></el-footer>
     </el-container>
   </div>
 </template>
 
 <script>
 import saveAs from "file-saver";
+import musicPlayer from "./musicPlayer";
 // import music from "./music";
 export default {
   name: "musiclist",
@@ -64,6 +61,7 @@ export default {
     return {
       toolVisible: false,
       toolIndex: 0,
+      theUrl: "",
       logoLib: {
         xiami: "../assets/musicLogo/xiami.png",
         baiduFlac: "../assets/musicLogo/baiduFlac.png",
@@ -97,7 +95,9 @@ export default {
       });
     },
     play(music) {
-      this.$emit("play", music);
+      // this.$emit("play", music);
+      this.theUrl = music.download_url;
+      console.log(this.theUrl);
     },
     down(url) {
       console.log(url);
@@ -123,6 +123,7 @@ export default {
   },
   components: {
     // music
+    musicPlayer
   },
   watch: {
     // toolVisible(value){
