@@ -7,9 +7,15 @@
       </el-header>
       <el-main>
         <musicbox class="musicbox" @load="load" @pulldata="pulldata"></musicbox>
-        <musiclist class="musiclist" :musicList="musicList"></musiclist>
+        <musiclist
+          class="musiclist"
+          @play="play"
+          :musicList="musicList"
+        ></musiclist>
       </el-main>
-      <el-footer height="40px" class="footer"></el-footer>
+      <el-footer height="40px" class="footer"
+        ><music :musicData="musicData"></music
+      ></el-footer>
     </el-container>
   </div>
 </template>
@@ -19,9 +25,11 @@ import headerr from "./header.vue";
 import musicbox from "./musicbox.vue";
 import timeLoading from "./timeLoading";
 import musiclist from "./musiclist";
+import music from "./music";
 export default {
   name: "Akimusic",
   components: {
+    music,
     headerr,
     musicbox,
     timeLoading,
@@ -30,12 +38,16 @@ export default {
   data() {
     return {
       loading: false,
+      musicData: {},
       musicList: []
     };
   },
   methods: {
     load(loading) {
       this.loading = loading;
+    },
+    play(music) {
+      this.musicData = music;
     },
     pulldata(data) {
       this.musicList = data;

@@ -7,9 +7,16 @@
   left: 0;
   .el-container{
     text-align: center;
+    .el-main{
+      height: 90vh;
+    }
     .footer{
-      font-weight: bold;
-      //background-color: #606266;
+      //font-weight: bold;
+      //width: 70%;
+      ///* vertical-align: middle; */
+      //position: relative;
+      //margin-left: 300px;
+      //padding: 0;
 
     }
   }
@@ -61,49 +68,125 @@
 }
 
 .musiclist {
+  //width: 100%;
   position: absolute;
-  margin: 0 auto;
-  left: calc(50vw - 65% /2);
-  top: calc(50vh - 20px);
-  width: 100%;
+  top: calc(50vh - 50px );
+  left: calc(50vw - 50% /2);
   .el-container{
     height: 500px;
     .el-main{
       padding: 0;
+
+    }
+    .el-scrollbar__wrap {
+      overflow-x: hidden;
     }
   }
   .musicgrid {
+    width: 850px;
     margin-top: 10px;
-    .logo{
-      float: left;
-      //display: ;
-      position: relative;
-      margin: 15px;
-      width: 4%;
-    }
-    .singer{
-      float: left;
-
-      font-weight: bold;
-      text-align: left;
-      width: 200px;
-      //display: inline-block;
-      //margin: 10px;
-      margin: 15px;
-      color: #606266;
-    }
-
     .el-card {
-      width: 65%;
+      //width: 65%;
 
       //height: 50px;
       border-radius: 20px;
       border-color: #f2f6fc;
-
     }
     .el-card__body {
       padding: 0;
       text-align: center;
+      display: inline-block;
+      vertical-align: middle;
+      margin: 20px;
+      width: 100%;
+      .logo{
+        float: left;
+        margin-left: -70px;
+        display: inline-block;
+        vertical-align: middle;
+
+      }
+      .songname{
+        float: left;
+        font-weight: bold;
+        text-align: left;
+        width: 130px;
+        margin-left: -50px;
+        display: inline-block;
+        vertical-align: middle;
+        color: #606266;
+      }
+      .singer{
+        float: left;
+        font-weight: bold;
+        text-align: left;
+        width: 120px;
+        margin-left: 20px;
+        display: inline-block;
+        vertical-align: middle;
+        color: #606266;
+      }
+      .album{
+        float: left;
+        font-weight: bold;
+        text-align: left;
+        width: 130px;
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 0;
+        color: #606266;
+      }
+      .ext{
+        float: left;
+        font-weight: bold;
+        text-align: left;
+        width: 150px;
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 50px;
+        color: #606266;
+      }
+      .filesize{
+        float: left;
+        font-weight: bold;
+        text-align: left;
+        width: 150px;
+        //display: flex;
+        //align-items: center;
+        //margin-left: -50px;
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: -60px;
+        color: #606266;
+      }
+      .tool{
+        //display: inline-block;
+        //float: left;
+        //width: 80px;
+        //margin-left: -80px;
+        //height: 35px;
+        .el-button{
+          padding: 0;
+        }
+        .download{
+          width: 80px;
+          float: left;
+          //display: inline-block;
+          height: 34px;
+          //border: 0;
+          vertical-align: middle;
+          margin-left: -80px;
+          //box-shadow: 0 4px 10px 1px rgba(0, 0, 0, 0.2);
+        }
+        .play{
+          float: left;
+          width: 80px;
+          //display: inline-block;
+          vertical-align: middle;
+          margin-left: -30px;
+          height: 34px;
+        }
+      }
     }
 
   }
@@ -111,18 +194,19 @@
 .musicboxp{
   position: absolute;
   //height: 50px;
-  top: calc(50vh - 50px / 2);
+  top: calc(50vh - 70px / 2);
   left: calc(50vw - 600px / 2);
 }
 .musicbox {
-  width: 700px;
+  width: 800px;
   position: absolute;
   //height: 50px;
-  top: calc(50vh - 300px / 2);
-  left: calc(50vw - 700px / 2);
+  top: calc(50vh - 400px / 2);
+  left: calc(50vw - 47% / 2);
 
   .musicinput {
     //float: left;
+    //width: 80%;
     .el-input__inner {
       height: 50px;
       left: 5px;
@@ -152,8 +236,8 @@
     height: 40px;
     border-radius: 40px;
     top: 5px;
-    width: 15%;
-    left: calc(100% - 15% - 5px);
+    width: 10%;
+    left: calc(100% - 10% - 5px);
     color: #FFFFFF;
     //box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2);
   }
@@ -170,15 +254,16 @@
 .musicappselect {
   margin-top: 20px;
   font-weight: bold;
-
   .el-checkbox-button__inner:hover {
     color: #feba07;
+    box-shadow: 0 2px 7px 1px rgba(0, 0, 0, 0.1);
     //border-color: #DCDFE6;
     //border: 1px solid #DCDFE6;
   }
 
   .el-checkbox-button.is-focus .el-checkbox-button__inner {
-    border-color: #f2f6fc;
+    //color: #feba07;
+    background: #f2f6fc;
   }
 
   .el-checkbox-button:first-child, .el-checkbox-button:last-child {
@@ -192,6 +277,8 @@
   .el-checkbox-button__inner {
     border: 0px solid #f2f6fc;
     border-radius: 50px;
+    background: #f2f6fc;
+    //color: #feba07;
     font-weight: bold;
     //box-shadow: 0 2px 7px 1px rgba(0, 0, 0, 0.1);
   }
@@ -201,7 +288,15 @@
   }
 
 }
-
+.music-player{
+  font-weight: bold;
+  width: 70%;
+  /* vertical-align: middle; */
+  position: relative;
+  margin-left: 300px;
+  padding: 0;
+  //color: #67c23a;
+}
 .timeLoading {
   position: absolute;
   top: calc(50% - 48px);

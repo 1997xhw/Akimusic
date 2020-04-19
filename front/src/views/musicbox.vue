@@ -16,6 +16,7 @@
         text-color="#FFFFFF"
         fill="#feba07"
       >
+        <el-checkbox-button></el-checkbox-button>
         <el-checkbox-button label="netease">网易云</el-checkbox-button>
         <el-checkbox-button label="qq">QQ</el-checkbox-button>
         <el-checkbox-button label="xiami">虾米</el-checkbox-button>
