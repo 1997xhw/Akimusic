@@ -16,7 +16,7 @@ Vue.config.productionTip = false;
 Vue.use(VueAxios, axios);
 axios.defaults.baseURL = "/api";
 new Vue({
-  render: h => h(Akimusic),
   router,
+  render: h => h(Akimusic),
   store
 }).$mount("#app");

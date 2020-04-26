@@ -88,6 +88,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': ['front/dist'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -99,7 +100,10 @@ TEMPLATES = [
         },
     },
 ]
-
+# Add for vue.js
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "front/dist/static"),
+]
 WSGI_APPLICATION = 'Akimusic.wsgi.application'
 
 

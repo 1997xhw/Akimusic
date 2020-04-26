@@ -7,7 +7,7 @@ Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "/",
+    path: "/music",
     name: "Akimusic",
     component: Akimusic,
     meta: {
