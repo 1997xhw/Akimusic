@@ -9,7 +9,10 @@ const routes = [
   {
     path: "/",
     name: "Akimusic",
-    component: Akimusic
+    component: Akimusic,
+    meta: {
+      title: "Akimusic"
+    }
   },
   {
     path: "/home",
@@ -32,5 +35,11 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 });
-
+router.beforeEach((to, from, next) => {
+  /* 路由发生变化修改页面title */
+  if (to.meta.title) {
+    document.title = to.meta.title;
+  }
+  next();
+});
 export default router;

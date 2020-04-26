@@ -12,15 +12,13 @@ class MusicView(View):
     @Analyse.r(b=[
         PList(name='targetsrcs', read_name='音乐平台').set_child(
             P('targetsrc', '音乐平台').validate(is_platform)
-            # P('targetsrc', '音乐平台').validate(lambda x: x in ['baiduFlac', 'kugou', 'kuwo', 'qq', 'netease', 'migu', 'xiami', 'joox'])
         ),
-        # P('targetsrcs', '音乐平台').process(list),
         P('musicname', '名字').process(str),
 
     ])
     def post(request):
-        print(request.d.musicname)
-        print(request.d.targetsrcs)
+        # print(request.d.musicname)
+        # print(request.d.targetsrcs)
         config = {'logfilepath': 'musicdl.log', 'savedir': 'downloaded', 'search_size_per_source': 5, 'proxies': {}}
         target_srcs = request.d.targetsrcs
         client = musicdl.musicdl(config=config)
