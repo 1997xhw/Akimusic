@@ -12,34 +12,70 @@
                   @mouseenter.native="enter(index)"
                   @mouseleave.native="leave"
                 >
-                  <span class="logo"
-                    ><img :src="logo(music.source)" style="width: 15%;"
-                  /></span>
-                  <span class="songname">{{ music.songname }}</span>
-                  <span class="singer">{{ music.singers }}</span>
-                  <span class="album" v-if="music.album">{{
-                    music.album
-                  }}</span>
-                  <span class="album" v-else>无</span>
-                  <span class="ext">{{ music.ext }}</span>
-                  <span class="filesize">{{ music.filesize }}</span>
-                  <div class="tool" v-show="toolVisible && toolIndex === index">
-                    <a :href="music.download_url" target="_blank" download>
-                      <el-button type="text" class="download"
+                  <el-row>
+                    <el-col :span="4">
+                      <span class="logo"
                         ><img
-                          src="../assets/toolLogo/下载2.png"
-                          style="width: 32%"
-                      /></el-button>
-                    </a>
-                    <el-button
-                      type="text"
-                      class="play"
-                      @click.native="play(music)"
-                      ><img
-                        src="../assets/toolLogo/播放2.png"
-                        style="width: 32%"
-                    /></el-button>
-                  </div>
+                          :src="logo(music.source)"
+                          style="width: 15%;"/></span></el-col
+                    ><el-col :span="4">
+                      <span class="songname">{{ music.songname }}</span></el-col
+                    ><el-col :span="4">
+                      <span class="singer">{{ music.singers }}</span></el-col
+                    ><el-col :span="4">
+                      <span class="album" v-if="music.album">{{
+                        music.album
+                      }}</span>
+                      <span class="album" v-else>无</span> </el-col
+                    ><el-col :span="4">
+                      <span class="ext">{{ music.ext }}</span></el-col
+                    ><el-col :span="4">
+                      <div class="tool">
+                        <a :href="music.download_url" target="_blank" download>
+                          <el-button type="text" class="download"
+                            ><img
+                              src="../assets/toolLogo/下载2.png"
+                              style="width: 32%"
+                          /></el-button>
+                        </a>
+                        <el-button
+                          type="text"
+                          class="play"
+                          @click.native="play(music)"
+                          ><img
+                            src="../assets/toolLogo/播放2.png"
+                            style="width: 32%"
+                        /></el-button></div
+                    ></el-col>
+                  </el-row>
+                  <!--                  <span class="logo"-->
+                  <!--                    ><img :src="logo(music.source)" style="width: 15%;"-->
+                  <!--                  /></span>-->
+                  <!--                  <span class="songname">{{ music.songname }}</span>-->
+                  <!--                  <span class="singer">{{ music.singers }}</span>-->
+                  <!--                  <span class="album" v-if="music.album">{{-->
+                  <!--                    music.album-->
+                  <!--                  }}</span>-->
+                  <!--                  <span class="album" v-else>无</span>-->
+                  <!--                  <span class="ext">{{ music.ext }}</span>-->
+                  <!--                  <span class="filesize">{{ music.filesize }}</span>-->
+                  <!--                  <div class="tool" v-show="toolVisible && toolIndex === index">-->
+                  <!--                    <a :href="music.download_url" target="_blank" download>-->
+                  <!--                      <el-button type="text" class="download"-->
+                  <!--                        ><img-->
+                  <!--                          src="../assets/toolLogo/下载2.png"-->
+                  <!--                          style="width: 32%"-->
+                  <!--                      /></el-button>-->
+                  <!--                    </a>-->
+                  <!--                    <el-button-->
+                  <!--                      type="text"-->
+                  <!--                      class="play"-->
+                  <!--                      @click.native="play(music)"-->
+                  <!--                      ><img-->
+                  <!--                        src="../assets/toolLogo/播放2.png"-->
+                  <!--                        style="width: 32%"-->
+                  <!--                    /></el-button>-->
+                  <!--                  </div>-->
                 </el-card>
               </div>
             </el-col>

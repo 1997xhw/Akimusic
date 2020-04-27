@@ -34,9 +34,51 @@
         top: calc(50vh - 450px / 2);
         left: calc(50vw - 47% / 2);
 
+        .sizeslide{
+          margin-top: 20px;
+        }
+        .el-dialog__body {
+          text-align: center;
+          padding: 25px 25px 30px;
+        }
+        .checkbox{
+          .el-checkbox__label{
+            font-weight: bold;
+          }
+          .el-checkbox__inner{
+            border-radius: 50px;
+          }
+          .el-checkbox {
+            margin-right: 20px;
+          }
+        }
+
         .musicinput {
           //float: left;
           //width: 80%;
+          .el-button {
+            position: absolute;
+            border: none;
+            background: #5a24b2;
+            //height: 40px;
+            border-radius: 100px;
+            top: 8px;
+            //width:70px;
+            font-size: 25px;
+            text-align: center;
+            left: calc(100% - 95px);
+            pading: 0;
+            color: #FFFFFF;
+            //box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2);
+          }
+
+          .el-button:hover, .el-button:focus {
+            color: #f2f6fc;
+            border: none;
+            //border-color: #b3d9d9;
+            background-color: #5a24b2;
+            //box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
+          }
           .el-input__inner {
             height: 65px;
             left: 5px;
@@ -64,29 +106,7 @@
             left: 0;
           }
         }
-        .el-button {
-          position: absolute;
-          border: none;
-          background: #5a24b2;
-          //height: 40px;
-          border-radius: 100px;
-          top: 8px;
-          //width:70px;
-          font-size: 25px;
-          text-align: center;
-          left: calc(100% - 95px);
-          pading: 0;
-          color: #FFFFFF;
-          //box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2);
-        }
 
-        .el-button:hover, .el-button:focus {
-          color: #f2f6fc;
-          border: none;
-          //border-color: #b3d9d9;
-          background-color: #5a24b2;
-          //box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
-        }
       }
     }
 
@@ -152,18 +172,19 @@
   //width: 100%;
   position: absolute;
   width: 75%;
-  top: calc(50vh - 150px / 2);
+  top: calc(50vh - 300px / 2);
   left: calc(50vw - 50% / 2);
   .el-container {
-    height: 550px;
+    height: 600px;
     //width: 71%;
     //position: absolute;
     //top: calc(50vh - 300px / 2);
     //left: calc(50vw - 49% / 2);
     .el-main {
-      height: 500px;
+      height: 100% ;
       width: 100%;
       padding: 0;
+      overflow: hidden;
     }
 
     .el-scrollbar__wrap {
@@ -238,7 +259,7 @@
   .musicgrid {
     width: 100%;
     margin-top: 10px;
-
+    margin-left: 10px;
     .el-card {
       //width: 65%;
       width: 70%;
@@ -267,7 +288,7 @@
         float: left;
         font-weight: bold;
         text-align: left;
-        width: 120px;
+        //width: 120px;
         margin-left: -50px;
         display: inline-block;
         vertical-align: middle;
@@ -278,8 +299,8 @@
         float: left;
         font-weight: bold;
         text-align: left;
-        width: 120px;
-        margin-left: 20px;
+        //width: 120px;
+        //margin-left: -50px;
         display: inline-block;
         vertical-align: middle;
         color: #606266;
@@ -289,10 +310,10 @@
         float: left;
         font-weight: bold;
         text-align: left;
-        width: 150px;
-        display: inline-block;
-        vertical-align: middle;
-        margin-left: px;
+        //width: 150px;
+        //display: inline-block;
+        //vertical-align: middle;
+        //margin-left: -50px;
         color: #606266;
       }
 
@@ -300,10 +321,9 @@
         float: left;
         font-weight: bold;
         text-align: left;
-        width: 70px;
+        //width: 70px;
         display: inline-block;
-        vertical-align: middle;
-        //margin-left: 60px;
+        //margin-left: -50px;
         color: #606266;
       }
 
@@ -311,7 +331,7 @@
         float: left;
         font-weight: bold;
         text-align: left;
-        width: 50px;
+        //width: 50px;
         //display: flex;
         //align-items: center;
         //margin-left: -50px;
@@ -322,33 +342,26 @@
       }
 
       .tool {
-        //display: inline-block;
-        float: right;
-        //position: absolute;
-        //width: 80px;
-        //margin-left: -80px;
-        //height: 35px;
-        right: 10px;
+
+        //float: right;
+        //right: 10px;
         .el-button {
           padding: 0;
         }
-
+        //v-show="toolVisible && toolIndex === index"
         .download {
           width: 80px;
-          float: left;
-          //display: inline-block;
+          //float: right;
           height: 34px;
+          margin-left: -20px;
           //border: 0;
-          vertical-align: middle;
-          //margin-left: -60px;
-          //box-shadow: 0 4px 10px 1px rgba(0, 0, 0, 0.2);
+          //vertical-align: middle;
         }
 
         .play {
-          float: left;
+          //float: right;
           width: 80px;
-          //display: inline-block;
-          vertical-align: middle;
+          //vertical-align: middle;
           margin-left: -40px;
           height: 34px;
         }

@@ -14,12 +14,14 @@ class MusicView(View):
             P('targetsrc', '音乐平台').validate(is_platform)
         ),
         P('musicname', '名字').process(str),
+        P('searchsize', '搜索阈值').process(int),
 
     ])
     def post(request):
         # print(request.d.musicname)
         # print(request.d.targetsrcs)
-        config = {'logfilepath': 'musicdl.log', 'savedir': 'downloaded', 'search_size_per_source': 5, 'proxies': {}}
+        searchsize = request.d.searchsize
+        config = {'logfilepath': 'musicdl.log', 'savedir': 'downloaded', 'search_size_per_source': searchsize, 'proxies': {}}
         target_srcs = request.d.targetsrcs
         client = musicdl.musicdl(config=config)
         search_results = client.search(request.d.musicname, target_srcs)
