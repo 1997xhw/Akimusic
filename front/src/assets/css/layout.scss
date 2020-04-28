@@ -1,7 +1,14 @@
-//* {
-//  padding: 0;
-//  margin: 0;
-//}
+* {
+  padding: 0;
+  margin: 0;
+}
+
+$music-box-height: 65px;
+$go-height: 45px;
+$go-width: 100px;
+$go-padding: $music-box-height / 2 - $go-height / 2;
+
+
 
 .container-box {
   background-color: #f2f6fc;
@@ -16,6 +23,8 @@
     position: absolute;
     height: 100%;
     width: 100%;
+    left: 0;
+    top: 0;
     //background-color: #f2f6fc;
     .el-main {
       //height: 90vh;
@@ -32,7 +41,12 @@
         position: absolute;
         //height: 50px;
         top: calc(50vh - 450px / 2);
-        left: calc(50vw - 47% / 2);
+        left: calc(50vw - 50% / 2);
+
+        @media screen and (max-width: 500px) {
+          width: 70%;
+          left: calc(50vw - 70% / 2);
+        }
 
         .sizeslide{
           margin-top: 20px;
@@ -57,17 +71,17 @@
           //float: left;
           //width: 80%;
           .el-button {
+
             position: absolute;
             border: none;
             background: #5a24b2;
-            //height: 40px;
-            border-radius: 100px;
-            top: 8px;
-            //width:70px;
+            height: $go-height;
+            top: $go-padding;
+            right: $go-padding;
+            border-radius: $go-height / 2;
+            width: $go-width;
             font-size: 25px;
             text-align: center;
-            left: calc(100% - 95px);
-            pading: 0;
             color: #FFFFFF;
             //box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2);
           }
@@ -80,23 +94,26 @@
             //box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
           }
           .el-input__inner {
-            height: 65px;
-            left: 5px;
-            border-radius: 65px;
+            height: $music-box-height;
+            border-radius: $music-box-height;
+            padding: 0 $go-padding*2+$go-width 0 $music-box-height;
+            width: calc(100%);
             border: none;
             box-shadow: 0 4px 10px 1px rgba(0, 0, 0, 0.2);
           }
 
           .el-input__prefix {
             color: #303133;
-            left: 4px;
+            left: 0px;
+            width: $music-box-height;
             position: absolute;
+            text-align: center;
           }
 
           .el-icon-search {
             font-weight: bold;
-            position: absolute;
-            top: 2px;
+            //position: absolute;
+            top: 0px;
           }
 
         }
@@ -169,22 +186,26 @@
 }
 
 .musiclist {
-  //width: 100%;
+  width: 100%;
   position: absolute;
-  width: 75%;
+  //width: 75%;
   top: calc(50vh - 300px / 2);
-  left: calc(50vw - 50% / 2);
+  //left: calc(50vw - 50% / 2);
+  left: 0;
+  //padding: 0 20px;
   .el-container {
-    height: 600px;
-    //width: 71%;
-    //position: absolute;
-    //top: calc(50vh - 300px / 2);
-    //left: calc(50vw - 49% / 2);
+    height: calc(50vh + 300px/2);
     .el-main {
       height: 100% ;
       width: 100%;
       padding: 0;
       overflow: hidden;
+      .mlist {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
     }
 
     .el-scrollbar__wrap {
@@ -259,7 +280,8 @@
   .musicgrid {
     width: 100%;
     margin-top: 10px;
-    margin-left: 10px;
+    display: flex;
+    justify-content: center;
     .el-card {
       //width: 65%;
       width: 70%;
@@ -269,11 +291,10 @@
     }
 
     .el-card__body {
-      padding: 0;
+      padding: 15px;
       text-align: center;
       display: inline-block;
       vertical-align: middle;
-      margin: 20px;
       width: 100%;
 
       .logo {
@@ -424,8 +445,8 @@
 
 .timeLoading {
   position: absolute;
-  top: calc(50% - 48px);
-  left: calc(50% - 48px);
+  top: calc(50% - 190px/2);
+  left: calc(50% - 223px/2);
   text-align: center;
   .text {
     font-weight: bold;

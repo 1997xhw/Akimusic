@@ -115,9 +115,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'OPTIONS': {
             'charset': 'utf8mb4',
-            'read_default_file': os.path.join(BASE_DIR, 'mysql.local.conf'),
-            'init_command':
-                'SET default_storage_engine=INNODB; SET sql_mode=\'STRICT_TRANS_TABLES\'; SET innodb_strict_mode=1',
+            'read_default_file': os.path.join(BASE_DIR, 'mysql.local.conf')
         },
     },
 }

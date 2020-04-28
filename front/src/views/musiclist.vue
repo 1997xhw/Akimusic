@@ -4,8 +4,8 @@
       <el-scrollbar>
         <el-main>
           <!--        <el-scrollbar style="overflow:auto">-->
-          <el-row v-if="this.musicList.length > 0">
-            <el-col :span="24" v-for="(music, index) of musicList" :key="index">
+          <el-row class="mlist" v-if="this.musicList.length > 0">
+            <el-col class="mitem" :span="24" v-for="(music, index) of musicList" :key="index">
               <div class="musicgrid">
                 <el-card
                   shadow="hover"
