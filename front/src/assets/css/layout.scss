@@ -208,9 +208,9 @@ $go-padding: $music-box-height / 2 - $go-height / 2;
       }
     }
 
-    .el-scrollbar__wrap {
-      overflow-x: hidden;
-    }
+    //.el-scrollbar__wrap {
+    //  overflow-x: hidden;
+    //}
   }
 
   //音乐播放器
@@ -219,8 +219,9 @@ $go-padding: $music-box-height / 2 - $go-height / 2;
     position: absolute;
     //text-align: center;
     //top: calc(50vh  /2);
+    left: calc(50vw - 50% / 2 + 25% - 250px);
     //width: 100%;
-    left: 120px;
+    //left: 120px;
 
     .slider {
       display: inline-block;
@@ -289,7 +290,12 @@ $go-padding: $music-box-height / 2 - $go-height / 2;
       border-radius: 20px;
       border-color: #f2f6fc;
     }
-
+    //.el-scrollbar__wrap {
+    //  overflow-y: hidden;
+    //}
+    .el-scrollbar .el-scrollbar__wrap .el-scrollbar__view{
+      white-space: nowrap;
+    }
     .el-card__body {
       padding: 15px;
       text-align: center;
